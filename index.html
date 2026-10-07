@@ -31,7 +31,7 @@ h2{font-size:clamp(44px,6.5vw,88px)}
 .ph.light::after{color:#555;background:none}
 .ph::after{z-index:0}
 .ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
-.ph.light>img{object-fit:contain;padding:32px;background:#EFEFEB}
+.ph.light>img{position:static;inset:auto;flex:1;width:100%;height:auto;min-height:320px;max-height:460px;object-fit:contain;padding:28px;background:#EFEFEB}
 
 /* header */
 header{position:absolute;inset:0 0 auto;z-index:5;color:#fff}
@@ -47,7 +47,7 @@ header .btn{padding:18px 28px;font-size:18px;white-space:nowrap}
 .hero{position:relative;min-height:940px;color:#fff;background:var(--dark);display:flex;align-items:center;overflow:hidden}
 .hero>.ph{position:absolute;inset:0}
 .hero>.ph::after{justify-content:flex-end;padding-right:12%}
-.hero::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(17,19,21,.94) 25%,rgba(17,19,21,.35) 80%),linear-gradient(0deg,rgba(17,19,21,.9),transparent 45%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(rgba(17,19,21,.62),rgba(17,19,21,.62)),linear-gradient(0deg,rgba(17,19,21,.85),transparent 45%)}
 .hero .w{position:relative;z-index:3;max-width:1720px;width:100%;padding:190px 40px 70px}
 .hero h1{font-size:clamp(56px,7.2vw,132px);line-height:1.06}
 .hero h1 span{color:var(--o)}
@@ -69,7 +69,7 @@ header .btn{padding:18px 28px;font-size:18px;white-space:nowrap}
 .track{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 4px 40px;margin:0 -4px}
 .track::-webkit-scrollbar{display:none}
 .card{flex:0 0 calc((100% - 28px)/2);scroll-snap-align:start;background:#fff;border-radius:22px;padding:20px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:8px 28px;box-shadow:0 8px 30px rgba(0,0,0,.06);align-items:start}
-.card .ph{grid-row:1/span 5;aspect-ratio:1/1;min-height:380px;border-radius:var(--r)}
+.card .ph{grid-row:1/span 5;border-radius:var(--r);display:flex;align-items:stretch}
 .card>*:not(.ph){grid-column:2}
 .badge{position:absolute;top:14px;right:14px;z-index:2;background:var(--o);color:#111;font-weight:800;font-size:18px;padding:8px 16px;border-radius:99px}
 .card h3{font-size:60px;margin-top:12px}
@@ -118,7 +118,7 @@ footer li a:hover{color:#fff}
 .ph-tel{font-size:40px;font-weight:900;color:#fff;letter-spacing:-.02em;display:block;margin-bottom:6px}
 .copy{margin-top:72px;padding-top:24px;border-top:1px solid #2c2f33;font-size:15px;color:#888;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:1000px){
-  .hero .w{padding:150px 24px 50px}.card{flex-basis:88%;grid-template-columns:1fr}.card .ph{grid-row:auto;aspect-ratio:4/3;min-height:300px}.card>*:not(.ph){grid-column:1}.arrows{display:none}.cat .top{display:block}
+  .hero .w{padding:150px 24px 50px}.card{flex-basis:88%;grid-template-columns:1fr}.card .ph{grid-row:auto}.card .ph.light>img{min-height:240px;max-height:340px}.card>*:not(.ph){grid-column:1}.arrows{display:none}.cat .top{display:block}
  nav,.tel{display:none}header .btn{margin-left:auto}
  .grid,.fg{grid-template-columns:1fr}.list{grid-template-columns:1fr}
  .step{grid-template-columns:1fr}.step i{font-size:90px}
@@ -165,7 +165,7 @@ footer li a:hover{color:#fff}
 .f-success p{color:#444;font-size:18px;margin-bottom:8px}
 /* details modal */
 .d-box{max-width:640px;text-align:left}
-.d-box img{width:100%;height:300px;object-fit:contain;background:#EFEFEB;border-radius:14px;margin-bottom:18px}
+.d-box img{width:100%;height:auto;max-height:300px;object-fit:contain;background:#EFEFEB;border-radius:14px;margin-bottom:18px}
 .d-box h3{font-size:40px}
 .d-price{font-size:26px;font-weight:900;margin:6px 0 16px}
 .d-price small{font-size:17px;color:#666;font-weight:500}
@@ -179,7 +179,7 @@ footer li a:hover{color:#fff}
 .d-use span{background:#F7F7F5;border-radius:99px;padding:8px 16px;font-size:16px;font-weight:500}
 .d-actions{display:flex;gap:12px;margin-top:22px}
 .d-actions .btn{flex:1;text-align:center;padding:20px 10px;font-size:19px}
-@media(max-width:600px){.m-num{font-size:30px}.m-row{flex-direction:column}.m-box{padding:32px 22px}.f-row{grid-template-columns:1fr}.f-alt{flex-direction:column}.d-actions{flex-direction:column}.d-box img{height:220px}}
+@media(max-width:600px){.m-num{font-size:30px}.m-row{flex-direction:column}.m-box{padding:32px 22px}.f-row{grid-template-columns:1fr}.f-alt{flex-direction:column}.d-actions{flex-direction:column}.d-box img{max-height:240px}}
 /* на телефоне звонок — главная кнопка */
 @media(pointer:coarse){.m-call{order:-1;font-size:22px;padding:22px 10px}}
 </style>
