@@ -55,6 +55,10 @@ header .btn{padding:18px 28px;font-size:18px;white-space:nowrap}
 .hero .btns{display:flex;gap:18px;flex-wrap:wrap}
 .trust{display:flex;gap:56px;flex-wrap:wrap;margin-top:72px;padding-top:32px;border-top:1px solid rgba(255,255,255,.25);font-size:22px;font-weight:500}
 .trust b{color:var(--o);font-size:48px;font-weight:900;margin-right:12px;vertical-align:middle}
+.hero .w{text-align:center}
+.hero p{margin-left:auto;margin-right:auto}
+.hero .btns{justify-content:center}
+.trust{justify-content:center;text-align:center}
 /* catalog */
 .cat{padding:140px 0}
 .cat .top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px}
@@ -125,7 +129,7 @@ footer li a:hover{color:#fff}
 /* modal */
 .m-overlay{position:fixed;inset:0;z-index:99;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(17,19,21,.72);backdrop-filter:blur(6px)}
 .m-overlay.open{display:flex}
-.m-box{position:relative;background:#fff;border-radius:22px;padding:40px 36px;max-width:480px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:pop .2s ease}
+.m-box{position:relative;background:#fff;border-radius:22px;padding:40px 36px;max-width:520px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:pop .2s ease;max-height:92vh;overflow-y:auto}
 @keyframes pop{from{transform:scale(.96) translateY(8px);opacity:0}}
 .m-box h3{font-size:34px;margin-bottom:8px}
 .m-box .sub{font-size:18px;color:#666;margin-bottom:20px}
@@ -139,7 +143,45 @@ footer li a:hover{color:#fff}
 .m-close{position:absolute;top:12px;right:14px;width:44px;height:44px;border-radius:50%;border:none;background:#F1F1ED;font-size:22px;cursor:pointer;line-height:1}
 .m-close:hover{background:var(--o)}
 .m-ok{font-size:16px;color:#0a7d2c;min-height:24px;margin-top:12px;font-weight:700}
-@media(max-width:600px){.m-num{font-size:30px}.m-row{flex-direction:column}.m-box{padding:32px 22px}}
+/* order form */
+.f-grid{display:grid;gap:12px;text-align:left;margin-bottom:16px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f-field label{display:block;font-size:14px;font-weight:800;margin-bottom:6px;color:#333}
+.f-field input,.f-field select{width:100%;font:500 18px/1.3 Onest,Arial,sans-serif;padding:14px 16px;border:2px solid #e3e3de;border-radius:12px;background:#FBFBFA;color:#111}
+.f-field input:focus,.f-field select:focus{outline:none;border-color:var(--o)}
+.f-total{display:flex;justify-content:space-between;align-items:center;background:#111;color:#fff;border-radius:12px;padding:16px 20px;font-size:20px;font-weight:800;margin-bottom:14px}
+.f-total b{color:var(--o);font-size:28px}
+.f-note{font-size:14px;color:#666;background:#F7F7F5;border-radius:12px;padding:12px 16px;margin-bottom:14px;text-align:left}
+.f-agree{display:grid;gap:8px;text-align:left;margin-bottom:16px}
+.f-agree label{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#444;cursor:pointer}
+.f-agree input{width:20px;height:20px;accent-color:var(--o);flex-shrink:0;margin-top:1px}
+.f-submit{width:100%;border:none}
+.f-alt{display:flex;gap:12px;margin-top:12px}
+.f-alt .btn{flex:1;padding:16px 8px;font-size:17px}
+.f-err{color:#c00;font-size:15px;font-weight:700;min-height:22px;margin-bottom:6px}
+.f-success{text-align:center}
+.f-success .big{font-size:60px}
+.f-success h3{margin-bottom:10px}
+.f-success p{color:#444;font-size:18px;margin-bottom:8px}
+/* details modal */
+.d-box{max-width:640px;text-align:left}
+.d-box img{width:100%;height:300px;object-fit:contain;background:#EFEFEB;border-radius:14px;margin-bottom:18px}
+.d-box h3{font-size:40px}
+.d-price{font-size:26px;font-weight:900;margin:6px 0 16px}
+.d-price small{font-size:17px;color:#666;font-weight:500}
+.d-sec{font-size:15px;font-weight:800;color:var(--o);margin:16px 0 6px;text-transform:uppercase;letter-spacing:.04em}
+.d-box p{font-size:18px;color:#333}
+.d-spec{width:100%;border-collapse:collapse;font-size:17px;margin-top:6px}
+.d-spec td{padding:9px 4px;border-bottom:1px solid #eee}
+.d-spec td:first-child{color:#666;font-weight:500}
+.d-spec td:last-child{font-weight:800;text-align:right}
+.d-use{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.d-use span{background:#F7F7F5;border-radius:99px;padding:8px 16px;font-size:16px;font-weight:500}
+.d-actions{display:flex;gap:12px;margin-top:22px}
+.d-actions .btn{flex:1;text-align:center;padding:20px 10px;font-size:19px}
+@media(max-width:600px){.m-num{font-size:30px}.m-row{flex-direction:column}.m-box{padding:32px 22px}.f-row{grid-template-columns:1fr}.f-alt{flex-direction:column}.d-actions{flex-direction:column}.d-box img{height:220px}}
+/* на телефоне звонок — главная кнопка */
+@media(pointer:coarse){.m-call{order:-1;font-size:22px;padding:22px 10px}}
 </style>
 </head>
 <body>
@@ -191,7 +233,7 @@ footer li a:hover{color:#fff}
     <p>Пневматические колёса и откидная лопата. Мягко едет по неровной земле и бордюрам.</p>
     <div class="use"><b>Подойдёт для</b><span>Холодильник</span><span>Стиральная машина</span><span>Коробки при переезде</span><span>Мешки и ящики</span></div>
     <div class="price">350 ₽ <small>/ сутки</small></div>
-     <div class="btns"><a class="btn" href="#" data-order data-model="КГ 150П">Подробнее</a><a class="btn out" href="#cta" data-order data-model="КГ 150П">Заявка</a></div>
+     <div class="btns"><a class="btn" href="#" data-details="kg150p">Подробнее</a><a class="btn out" href="#cta" data-order data-model="КГ 150П">Заявка</a></div>
     </article>
     <article class="card">
      <div class="ph light" data-label="КГР 200"><img src="images/kgr200.webp" alt="КГР 200" onerror="this.remove()"><span class="badge">До 200 кг</span></div>
@@ -199,7 +241,7 @@ footer li a:hover{color:#fff}
      <p>Широкая платформа и литые колёса, которые не пробиваются. Для тяжёлых грузов.</p>
      <div class="use"><b>Подойдёт для</b><span>Холодильник и плита</span><span>Мебель и шкафы</span><span>Товар для магазина</span><span>Стройматериалы</span></div>
      <div class="price">400 ₽ <small>/ сутки</small></div>
-     <div class="btns"><a class="btn" href="#" data-order data-model="КГР 200">Подробнее</a><a class="btn out" href="#cta" data-order data-model="КГР 200">Заявка</a></div>
+     <div class="btns"><a class="btn" href="#" data-details="kgr200">Подробнее</a><a class="btn out" href="#cta" data-order data-model="КГР 200">Заявка</a></div>
     </article>
     <article class="card">
      <div class="ph light" data-label="КГЛ 200"><img src="images/kgl200.jpg" alt="КГЛ 200" onerror="this.remove()"><span class="badge">Для лестниц</span></div>
@@ -207,7 +249,7 @@ footer li a:hover{color:#fff}
      <p>Блок из трёх колёс сам «шагает» по ступеням, поднимать вручную не нужно.</p>
      <div class="use"><b>Подойдёт для</b><span>Техника без лифта</span><span>Переезд на этаж</span><span>Вода в бутылях</span><span>Коробки по лестнице</span></div>
      <div class="price">450 ₽ <small>/ сутки</small></div>
-     <div class="btns"><a class="btn" href="#" data-order data-model="КГЛ 200">Подробнее</a><a class="btn out" href="#cta" data-order data-model="КГЛ 200">Заявка</a></div>
+     <div class="btns"><a class="btn" href="#" data-details="kgl200">Подробнее</a><a class="btn out" href="#cta" data-order data-model="КГЛ 200">Заявка</a></div>
    </article>
   </div>
  </div>
@@ -261,35 +303,170 @@ footer li a:hover{color:#fff}
  </div>
 </footer>
 
+<!-- Подробнее о модели -->
+<div class="m-overlay" id="dOverlay" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+ <div class="m-box d-box">
+  <button class="m-close" id="dClose" aria-label="Закрыть">✕</button>
+  <img id="dImg" src="" alt="">
+  <h3 id="dTitle"></h3>
+  <div class="d-price" id="dPrice"></div>
+  <div class="d-sec">Описание</div>
+  <p id="dDesc"></p>
+  <div class="d-sec">Характеристики</div>
+  <table class="d-spec" id="dSpec"></table>
+  <div class="d-sec">Чаще всего используют</div>
+  <div class="d-use" id="dUse"></div>
+  <div class="d-actions">
+   <a class="btn" href="#" id="dOrder">Оставить заявку</a>
+   <a class="btn out" href="tel:+79656580808" style="color:#171717">Позвонить</a>
+  </div>
+ </div>
+</div>
+
+<!-- Заявка: форма заказа -->
 <div class="m-overlay" id="mOverlay" role="dialog" aria-modal="true" aria-labelledby="mTitle">
  <div class="m-box">
   <button class="m-close" id="mClose" aria-label="Закрыть">✕</button>
-  <h3 id="mTitle">Оставить заявку</h3>
-  <p class="sub">Позвоните нам — подберём тележку и забронируем</p>
-  <div class="m-model" id="mModel"></div>
-  <a class="m-num" href="tel:+79656580808">+7 965 658-08-08</a>
-  <p class="m-time">Пн–Пт с 9:00 до 18:00</p>
-  <div class="m-row">
-   <a class="btn" href="tel:+79656580808">Позвонить</a>
-   <button class="btn out" type="button" id="mCopy" style="color:#171717">Скопировать номер</button>
+  <div id="mForm">
+   <h3 id="mTitle">Оставить заявку</h3>
+   <p class="sub">Заполните форму — перезвоним и забронируем тележку. Или просто позвоните:</p>
+   <a class="m-num" href="tel:+79656580808">+7 965 658-08-08</a>
+   <p class="m-time">Пн–Пт с 9:00 до 18:00</p>
+   <div class="f-grid">
+    <div class="f-row">
+     <div class="f-field"><label for="fModel">Ваш заказ</label><select id="fModel"><option value="КГ 150П|350">КГ 150П — 350 ₽/сут</option><option value="КГР 200|400">КГР 200 — 400 ₽/сут</option><option value="КГЛ 200|450">КГЛ 200 — 450 ₽/сут</option></select></div>
+     <div class="f-field"><label for="fDays">Срок аренды, сут.</label><input id="fDays" type="number" min="1" max="90" value="1"></div>
+    </div>
+    <div class="f-row">
+     <div class="f-field"><label for="fName">Ваше имя</label><input id="fName" type="text" placeholder="Денис" autocomplete="name"></div>
+     <div class="f-field"><label for="fPhone">Ваш телефон</label><input id="fPhone" type="tel" placeholder="+79050055510" autocomplete="tel"></div>
+    </div>
+    <div class="f-field"><label for="fDate">Дата планируемой аренды</label><input id="fDate" type="date"></div>
+   </div>
+   <div class="f-total"><span>Итого</span><b id="fTotal">350 ₽</b></div>
+   <div class="f-note">Для сохранности имущества и обязательств по договору аренды берётся залог в размере оценочной стоимости тележки. Залог возвращается после окончания аренды и проверки оборудования.</div>
+   <div class="f-agree">
+    <label><input type="checkbox" id="fA1"> Я прочитал(а) и соглашаюсь с политикой конфиденциальности</label>
+    <label><input type="checkbox" id="fA2"> Я прочитал(а) и соглашаюсь с политикой обработки персональных данных</label>
+    <label><input type="checkbox" id="fA3"> Я даю согласие на обработку персональных данных</label>
+   </div>
+   <p class="f-err" id="fErr"></p>
+   <button class="btn f-submit" type="button" id="fSend">Отправить заявку</button>
+   <p class="sub" style="margin:14px 0 0">Нажимая на кнопку, вы даете согласие на обработку персональных данных</p>
+   <div class="f-alt">
+    <a class="btn m-call" href="tel:+79656580808">Позвонить</a>
+    <button class="btn out" type="button" id="mCopy" style="color:#171717">Скопировать номер</button>
+   </div>
+   <p class="m-ok" id="mOk"></p>
   </div>
-  <p class="m-ok" id="mOk"></p>
+  <div id="mDone" class="f-success" style="display:none">
+   <div class="big">✅</div>
+   <h3>Заявка готова!</h3>
+   <p id="mDoneText"></p>
+   <div class="f-alt">
+    <a class="btn" href="#" id="mMail">Отправить на почту</a>
+    <a class="btn out" href="#" id="mMax" style="color:#171717">Открыть в MAX</a>
+   </div>
+   <div class="f-alt">
+    <button class="btn out" type="button" id="mCopyOrder" style="color:#171717">Скопировать текст заявки</button>
+   </div>
+   <p class="m-ok" id="mOk2"></p>
+   <p class="sub" style="margin-top:12px">Мы перезвоним для подтверждения. Или позвоните сами: <a href="tel:+79656580808" style="font-weight:800">+7 965 658-08-08</a></p>
+  </div>
  </div>
 </div>
 
 <script>
+/* ===== НАСТРОЙКИ ОТПРАВКИ (замените на свои) ===== */
+const CONFIG={
+ EMAIL:"zakaz@bashprokat-ufa.ru", /* почта для заявок (mailto + подпись) */
+ ORDER_ENDPOINT:"", /* backend для АВТОотправки, напр. "https://ваш-сервер/api/order". Пока пусто — заявка формируется локально */
+ MAX_BOT:"" /* ссылка на вашего бота в MAX, напр. "https://max.ru/bashprokat_bot". Пока пусто — откроется копирование текста */
+};
+const PRICES={"КГ 150П":350,"КГР 200":400,"КГЛ 200":450};
+/* ===== Карусель ===== */
 const t=document.getElementById('track'),step=()=>t.querySelector('.card').offsetWidth+28;
 document.getElementById('prev').onclick=()=>t.scrollBy({left:-step(),behavior:'smooth'});
 document.getElementById('next').onclick=()=>t.scrollBy({left:step(),behavior:'smooth'});
-// modal
-const ov=document.getElementById('mOverlay'),mModel=document.getElementById('mModel'),mOk=document.getElementById('mOk');
-function openM(model){mOk.textContent='';if(model){mModel.textContent='Модель: '+model;mModel.classList.add('show')}else{mModel.classList.remove('show')}ov.classList.add('open');document.body.style.overflow='hidden'}
-function closeM(){ov.classList.remove('open');document.body.style.overflow=''}
+
+/* ===== Данные для «Подробнее» (по каталогу производителя Rusklad) ===== */
+const DETAILS={
+ kg150p:{name:"КГ 150П",img:"images/kg150p.webp",price:"350 ₽",per:"/ сутки",
+  desc:"Двухколёсная тележка с откидной полкой. Каркас из круглой трубы 25 мм, штампованная лопата из листа 3 мм с рёбрами жёсткости. Пневматические колёса Ø200 мягко идут по неровной земле, бордюрам и порогам. Порошковая окраска — можно работать на улице. Откидная полка увеличивает площадь, в сложенном виде тележка компактная.",
+  spec:[["Грузоподъёмность","150 кг"],["Вес","6,1 кг"],["Высота","1295 мм"],["Платформа","227 × 290 мм"],["Откидная полка","502 × 235 мм"],["Колёса","пневматические Ø200"],["Покрытие","порошковое, RAL 5002"]],
+  use:["Холодильник и стиралка при переезде","Коробки и мешки","Товар для магазина","Дача и стройка","Бордюры и пороги"]},
+ kgr200:{name:"КГР 200",img:"images/kgr200.webp",price:"400 ₽",per:"/ сутки",
+  desc:"Усиленная двухколёсная тележка для тяжёлых грузов. Прочная рама из круглой трубы и листа, широкая лопата 500 × 247 мм. Литые колёса Ø200 невозможно пробить — надёжны на складе и стройке. Порошковая окраска RAL 5002.",
+  spec:[["Грузоподъёмность","200 кг"],["Вес","9 кг"],["Высота","1230 мм"],["Лопата","500 × 247 мм"],["Колёса","литые Ø200"],["Покрытие","порошковое, RAL 5002"]],
+  use:["Холодильник и плита","Мебель и шкафы","Товар для магазина","Мешки цемента и плитка","Складские коробки"]},
+ kgl200:{name:"КГЛ 200",img:"images/kgl200.jpg",price:"450 ₽",per:"/ сутки",
+  desc:"Лестничная тележка: два блока по три колеса Ø160 сами «шагают» по ступеням — поднимать груз вручную не нужно. Меньше рывков и ударов, хрупкие грузы едут спокойнее. Платформа с рёбрами жёсткости, рама из трубы 25 мм. Блоки также легко берут бордюры и пороги.",
+  spec:[["Грузоподъёмность","200 кг"],["Вес","8,8 кг (без колёс)"],["Габариты","605 × 576 × 1360 мм"],["Платформа","395 × 250 мм"],["Колёса","2 блока по 3 шт, Ø160"],["Покрытие","порошковое, RAL 5002"]],
+  use:["Подъём техники без лифта","Переезд на этаж","Бутыли с водой","Коробки по лестнице","Бордюры и пороги"]}
+};
+/* ===== Подробнее ===== */
+const dOv=document.getElementById('dOverlay');
+let dModel=null;
+function openD(key){const d=DETAILS[key];if(!d)return;dModel=d.name;
+ document.getElementById('dImg').src=d.img;document.getElementById('dImg').alt=d.name;
+ document.getElementById('dTitle').textContent=d.name;
+ document.getElementById('dPrice').innerHTML=d.price+' <small>'+d.per+'</small>';
+ document.getElementById('dDesc').textContent=d.desc;
+ document.getElementById('dSpec').innerHTML=d.spec.map(s=>'<tr><td>'+s[0]+'</td><td>'+s[1]+'</td></tr>').join('');
+ document.getElementById('dUse').innerHTML=d.use.map(u=>'<span>'+u+'</span>').join('');
+ dOv.classList.add('open');document.body.style.overflow='hidden'}
+function closeD(){dOv.classList.remove('open');if(!document.getElementById('mOverlay').classList.contains('open'))document.body.style.overflow=''}
+document.querySelectorAll('[data-details]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openD(a.dataset.details)}));
+document.getElementById('dClose').onclick=closeD;
+dOv.addEventListener('click',e=>{if(e.target===dOv)closeD()});
+document.getElementById('dOrder').onclick=e=>{e.preventDefault();const m=dModel;closeD();setTimeout(()=>openM(m),50)};
+/* ===== Заявка: форма ===== */
+const ov=document.getElementById('mOverlay'),mOk=document.getElementById('mOk'),
+ fModel=document.getElementById('fModel'),fDays=document.getElementById('fDays'),
+ fName=document.getElementById('fName'),fPhone=document.getElementById('fPhone'),
+ fDate=document.getElementById('fDate'),fTotal=document.getElementById('fTotal'),fErr=document.getElementById('fErr');
+try{fDate.valueAsDate=new Date()}catch(e){}
+function curPrice(){return parseInt((fModel.value.split('|')[1]||'350'),10)}
+function curModel(){return fModel.value.split('|')[0]}
+function updTotal(){const d=Math.max(1,parseInt(fDays.value||'1',10));fTotal.textContent=(curPrice()*d).toLocaleString('ru-RU')+' ₽'}
+fModel.onchange=updTotal;fDays.oninput=updTotal;updTotal();
+let lastOrder="";
+function openM(model){document.getElementById('mForm').style.display='block';document.getElementById('mDone').style.display='none';
+ fErr.textContent='';mOk.textContent='';
+ const title=document.getElementById('mTitle');
+ if(model){title.textContent='Заявка: '+model;[...fModel.options].forEach(o=>{if(o.value.indexOf(model)===0)fModel.value=o.value});updTotal()}
+ else{title.textContent='Получить консультацию'}
+ ov.classList.add('open');document.body.style.overflow='hidden'}
+function closeM(){ov.classList.remove('open');if(!dOv.classList.contains('open'))document.body.style.overflow=''}
 document.querySelectorAll('[data-order]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openM(a.dataset.model)}));
 document.getElementById('mClose').onclick=closeM;
 ov.addEventListener('click',e=>{if(e.target===ov)closeM()});
-addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
-document.getElementById('mCopy').onclick=function(){const n='+79656580808';const done=()=>{mOk.textContent='Номер скопирован ✓';this.textContent='Скопировано ✓';setTimeout(()=>this.textContent='Скопировать номер',2000)};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(n).then(done).catch(()=>fallback())}else fallback();function fallback(){const i=document.createElement('input');i.value=n;document.body.appendChild(i);i.select();try{document.execCommand('copy');done()}catch(e){mOk.textContent=n}i.remove()}};
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeM();closeD()}});
+function copyText(txt,okEl,btn,btnIdle){const done=()=>{okEl.textContent='Скопировано ✓';if(btn){btn.textContent='Скопировано ✓';setTimeout(()=>btn.textContent=btnIdle,2000)}};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(()=>fb())}else fb();
+ function fb(){const i=document.createElement('input');i.value=txt;document.body.appendChild(i);i.select();try{document.execCommand('copy');done()}catch(e){okEl.textContent=txt}i.remove()}}
+document.getElementById('mCopy').onclick=function(){copyText('+79656580808',mOk,this,'Скопировать номер')};
+document.getElementById('fSend').onclick=async function(){
+ fErr.textContent='';
+ const name=fName.value.trim(),phone=fPhone.value.trim(),days=Math.max(1,parseInt(fDays.value||'1',10));
+ const model=curModel(),price=curPrice(),sum=price*days;
+ if(name.length<2){fErr.textContent='Укажите ваше имя';fName.focus();return}
+ if(phone.replace(/\D/g,'').length<10){fErr.textContent='Проверьте телефон — нужно минимум 10 цифр';fPhone.focus();return}
+ if(!document.getElementById('fA1').checked||!document.getElementById('fA2').checked||!document.getElementById('fA3').checked){fErr.textContent='Подтвердите все три согласия галочками';return}
+ const dateStr=fDate.value?fDate.value.split('-').reverse().join('-'):fDate.placeholder||'—';
+ lastOrder='Ваш заказ: '+model+'\nСрок аренды: '+days+' сут.\n'+price+' ₽/сутки\nСумма: '+sum.toLocaleString('ru-RU')+' ₽\nВаше имя: '+name+'\nВаш телефон: '+phone+'\nДата планируемой аренды: '+dateStr;
+ /* пробуем автоотправку на backend, если настроен */
+ if(CONFIG.ORDER_ENDPOINT){try{await fetch(CONFIG.ORDER_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model,days,price,sum,name,phone,date:fDate.value,text:lastOrder})})}catch(e){}}
+ document.getElementById('mDoneText').textContent=model+' · '+days+' сут. · Итого '+sum.toLocaleString('ru-RU')+' ₽';
+ document.getElementById('mForm').style.display='none';document.getElementById('mDone').style.display='block';
+};
+document.getElementById('mMail').onclick=e=>{e.preventDefault();
+ const s=encodeURIComponent('Заявка Башпрокат: '+curModel()),b=encodeURIComponent(lastOrder+'\n\n---\nЗаявка с сайта Башпрокат');
+ location.href='mailto:'+CONFIG.EMAIL+'?subject='+s+'&body='+b};
+document.getElementById('mMax').onclick=e=>{e.preventDefault();
+ if(CONFIG.MAX_BOT){open(CONFIG.MAX_BOT,'_blank')}
+ copyText(lastOrder,document.getElementById('mOk2'),null,null)};
+document.getElementById('mCopyOrder').onclick=function(){copyText(lastOrder,document.getElementById('mOk2'),this,'Скопировать текст заявки')};
 </script>
 </body>
 </html>
