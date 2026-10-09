@@ -31,33 +31,44 @@ h2{font-size:clamp(44px,6.5vw,88px)}
 .ph.light::after{color:#555;background:none}
 .ph::after{z-index:0}
 .ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
-.ph.light>img{position:static;inset:auto;flex:1;width:100%;height:auto;min-height:260px;max-height:360px;object-fit:contain;padding:28px;background:#EFEFEB}
+.ph.light>img{position:static;inset:auto;flex:1;width:100%;height:auto;min-height:320px;max-height:460px;object-fit:contain;padding:28px;background:#EFEFEB}
 
 /* header */
 header{position:absolute;inset:0 0 auto;z-index:5;color:#fff}
-header .w{max-width:1720px;display:flex;align-items:center;gap:36px;padding-top:28px;white-space:nowrap}
+header .w{max-width:1720px;display:flex;align-items:center;gap:36px;padding:28px var(--px) 0;white-space:nowrap}
 .logo{font:900 30px Onest;letter-spacing:-.02em}
 .logo b{color:var(--o)}
-nav{display:flex;gap:28px;font-size:18px;flex:1;justify-content:center}
+nav{display:flex;gap:34px;font-size:17px;flex:1;justify-content:center}
+nav a{opacity:.92;transition:color .15s}
 nav a:hover{color:var(--o)}
 .tel{text-align:right;font-weight:800;font-size:22px;line-height:1.25}
-.tel small{display:block;font-weight:400;font-size:15px;opacity:.7}
-header .btn{padding:18px 28px;font-size:18px;white-space:nowrap}
+.tel small{display:block;font-weight:400;font-size:14px;opacity:.65}
+.btn.go{background:linear-gradient(180deg,#FFB020,#FF8A00);border-color:transparent;box-shadow:0 10px 30px rgba(255,138,0,.35),inset 0 1px 0 rgba(255,255,255,.35);display:inline-flex;align-items:center;justify-content:center;gap:14px}
+.btn.go svg{width:1.1em;height:1.1em;flex:none}
+header .btn{padding:17px 26px;font-size:17px;white-space:nowrap;border-radius:12px}
 /* hero */
-.hero{position:relative;min-height:940px;color:#fff;background:var(--dark);display:flex;align-items:center;overflow:hidden}
-.hero>.ph{position:absolute;inset:0}
-.hero>.ph::after{justify-content:flex-end;padding-right:12%}
-.hero::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(17,19,21,.9) 30%,rgba(17,19,21,.3) 75%),linear-gradient(0deg,rgba(17,19,21,.85),transparent 45%)}
-.hero .w{position:relative;z-index:3;max-width:1720px;width:100%;padding:190px 40px 70px}
-.hero h1{font-size:clamp(56px,7.2vw,132px);line-height:1.06}
-.hero h1 span{color:var(--o)}
-.hero p{font-size:28px;max-width:720px;margin:40px 0 48px;color:#e6e6e6}
-.hero .btns{display:flex;gap:18px;flex-wrap:wrap}
-.trust{display:flex;gap:56px;flex-wrap:wrap;margin-top:72px;padding-top:32px;border-top:1px solid rgba(255,255,255,.25);font-size:22px;font-weight:500}
-.trust b{color:var(--o);font-size:48px;font-weight:900;margin-right:12px;vertical-align:middle}
-.hero .w{text-align:left;padding-left:12%}
-.hero .btns{justify-content:flex-start}
-.trust{justify-content:flex-start;text-align:left}
+:root{--px:clamp(24px,7vw,120px)}
+.hero{position:relative;min-height:clamp(760px,100vh,940px);color:#fff;background:#0b0c0e;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg .photo{position:absolute;top:9%;right:0;bottom:0;width:60%;background-position:right bottom;background:url("images/hero-photo.jpg") right bottom/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%),linear-gradient(180deg,transparent 0,#000 7%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 30%),linear-gradient(180deg,transparent 0,#000 7%);mask-composite:intersect}
+.hero-bg .glow{position:absolute;inset:0;background:radial-gradient(60% 70% at 78% 55%,rgba(255,150,30,.22),transparent 70%),radial-gradient(40% 50% at 100% 0,rgba(255,190,90,.18),transparent 70%)}
+.hero-bg .shade{position:absolute;inset:0;background:linear-gradient(90deg,#0b0c0e 18%,rgba(11,12,14,.7) 38%,rgba(11,12,14,0) 62%),linear-gradient(0deg,rgba(11,12,14,.75),transparent 24%)}
+.hero-bg .edge{position:absolute;left:-90px;top:90px;width:180px;height:240px;border:1.5px solid rgba(255,153,0,.55);border-radius:34px;transform:skewX(-14deg) rotate(-8deg);box-shadow:0 0 40px rgba(255,153,0,.18),inset 0 0 40px rgba(255,153,0,.08)}
+.hero .w{position:relative;z-index:3;max-width:1720px;width:100%;padding:150px var(--px) 60px;text-align:left}
+.hero h1{font-size:clamp(56px,8.4vw,150px);line-height:.98;letter-spacing:-.035em}
+.hero h1 .l{display:block;background:linear-gradient(180deg,#fff 45%,#e4e4e4);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 24px rgba(0,0,0,.5))}
+.hero h1 span{display:block;background:linear-gradient(180deg,#FFB020 10%,#FF7A00);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 24px rgba(255,138,0,.35))}
+.hero .swoosh{display:block;width:clamp(140px,16vw,230px);height:6px;margin:22px 0 0 -4px;border-radius:99px;background:linear-gradient(90deg,#FF9900,rgba(255,153,0,0));transform:rotate(-1.5deg)}
+.hero p{font-size:clamp(18px,1.6vw,26px);line-height:1.5;max-width:640px;margin:34px 0 40px;color:#ececec}
+.hero .btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-start}
+.hero .btn{padding:24px 36px;font-size:20px;border-radius:14px}
+.hero .btn.out{background:rgba(255,255,255,.04);backdrop-filter:blur(6px);border:1.5px solid rgba(255,255,255,.85);color:#fff}
+.hero .btn.out:hover{background:rgba(255,255,255,.12)}
+.trust{display:flex;gap:14px 40px;flex-wrap:wrap;justify-content:flex-start;margin-top:56px;font-size:16px;font-weight:500;color:#cfcfcf;text-align:left}
+.trust span{display:inline-flex;align-items:center;gap:10px}
+.trust span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--o);box-shadow:0 0 12px var(--o)}
+.trust b{color:var(--o);font-size:22px;font-weight:900;margin-right:2px}
+.trust span:has(b)::before{display:none}
 /* catalog */
 .cat{padding:140px 0}
 .cat .top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px}
@@ -67,9 +78,9 @@ header .btn{padding:18px 28px;font-size:18px;white-space:nowrap}
 .arrows button:hover{background:var(--o);border-color:var(--o)}
 .track{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 4px 40px;margin:0 -4px}
 .track::-webkit-scrollbar{display:none}
-.card{flex:0 0 calc((100% - 56px)/3);scroll-snap-align:start;background:#fff;border-radius:22px;padding:20px;display:grid;grid-template-columns:1fr;gap:12px;box-shadow:0 8px 30px rgba(0,0,0,.06);align-items:start}
-.card .ph{border-radius:var(--r);display:flex;align-items:stretch}
-.card>*:not(.ph){grid-column:1}
+.card{flex:0 0 calc((100% - 28px)/2);scroll-snap-align:start;background:#fff;border-radius:22px;padding:20px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:8px 28px;box-shadow:0 8px 30px rgba(0,0,0,.06);align-items:start}
+.card .ph{grid-row:1/span 5;border-radius:var(--r);display:flex;align-items:stretch}
+.card>*:not(.ph){grid-column:2}
 .badge{position:absolute;top:14px;right:14px;z-index:2;background:var(--o);color:#111;font-weight:800;font-size:18px;padding:8px 16px;border-radius:99px}
 .card h3{font-size:60px;margin-top:12px}
 .card p{font-size:20px;color:var(--t2)}
@@ -117,11 +128,11 @@ footer li a:hover{color:#fff}
 .ph-tel{font-size:40px;font-weight:900;color:#fff;letter-spacing:-.02em;display:block;margin-bottom:6px}
 .copy{margin-top:72px;padding-top:24px;border-top:1px solid #2c2f33;font-size:15px;color:#888;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:1000px){
-  .hero .w{padding:150px 24px 50px}.card{flex-basis:88%;grid-template-columns:1fr}.card .ph{grid-row:auto}.card .ph.light>img{min-height:240px;max-height:340px}.card>*:not(.ph){grid-column:1}.arrows{display:none}.cat .top{display:block}
+  .hero .w{padding:130px var(--px) 380px}.hero-bg .photo{top:auto;height:360px;width:100%;background-position:70% top;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 8%);mask-image:linear-gradient(180deg,transparent 0,#000 8%)}header .w{gap:12px}.logo{font-size:24px}header .btn{padding:13px 16px;font-size:15px}header .btn svg{display:none}.hero-bg .edge{display:none}.hero-bg .shade{background:linear-gradient(180deg,transparent 55%,rgba(11,12,14,.7))}.hero h1{font-size:clamp(48px,14vw,84px)}.hero .btn{width:100%}.card{flex-basis:88%;grid-template-columns:1fr}.card .ph{grid-row:auto}.card .ph.light>img{min-height:240px;max-height:340px}.card>*:not(.ph){grid-column:1}.arrows{display:none}.cat .top{display:block}
  nav,.tel{display:none}header .btn{margin-left:auto}
  .grid,.fg{grid-template-columns:1fr}.list{grid-template-columns:1fr}
  .step{grid-template-columns:1fr}.step i{font-size:90px}
-  body{font-size:18px}.hero{min-height:760px}.hero p,.cat .lead,.cta p{font-size:21px}
+  body{font-size:18px}.hero{min-height:0;align-items:flex-start}.hero p,.cat .lead,.cta p{font-size:21px}
   .trust{gap:24px}.cat,.adv,.steps{padding:80px 0}.btn{padding:22px 28px}
   .card h3{font-size:40px}.price{font-size:38px}.ph-tel{font-size:30px;word-break:keep-all}
   h2{font-size:clamp(36px,9vw,64px)}
@@ -195,20 +206,22 @@ footer li a:hover{color:#fff}
    <a href="#catalog">Каталог</a><a href="#delivery">Доставка</a><a href="#steps">Как арендовать</a><a href="#docs">Документы</a><a href="#contacts">Контакты</a>
   </nav>
    <div class="tel">+7 965 658-08-08<small>Пн–Пт с 9:00 до 18:00</small></div>
-   <a class="btn" href="#cta" data-order>Оставить заявку</a>
+   <a class="btn go" href="#cta" data-order>Оставить заявку <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </header>
 
 <section class="hero">
- <!-- ФОН: положите фото в images/hero.jpg (1920×1100, лучше с человеком справа) -->
-  <div class="ph" data-label="Башпрокат"><img src="images/hero.jpg" alt="" onerror="this.remove()"></div>
+ <div class="hero-bg" aria-hidden="true">
+  <div class="photo"></div><div class="glow"></div><div class="shade"></div><div class="edge"></div>
+ </div>
  <div class="w">
-  <h1>Аренда<br>тележек<br><span>от 350 ₽</span></h1>
+  <h1><span class="l">Аренда</span><span class="l">тележек</span><span>от 350 ₽</span></h1>
+  <i class="swoosh"></i>
   <p>Грузовые тележки в аренду в Уфе: для переездов, складов, магазинов и ремонта. Доставим быстро, подберём подходящую модель.</p>
-   <div class="btns">
-    <a class="btn" href="#catalog">Выбрать тележку</a>
-    <a class="btn out" href="#cta" data-order>Получить консультацию</a>
-   </div>
+  <div class="btns">
+   <a class="btn go" href="#catalog">Выбрать тележку <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   <a class="btn out" href="#cta" data-order>Получить консультацию</a>
+  </div>
   <div class="trust">
    <span>Быстрая доставка по Уфе</span>
    <span>Исправное оборудование</span>
@@ -331,7 +344,7 @@ footer li a:hover{color:#fff}
   <div class="fg">
    <div><div class="logo"><b>Б</b>АШПРОКАТ</div><p>Прокат грузовых тележек — ваш надёжный помощник.</p></div>
    <div id="docs"><h4>Навигация</h4><ul><li><a href="#catalog">Каталог</a></li><li><a href="#steps">Как арендовать</a></li><li><a href="#delivery">Доставка</a></li><li><a href="#docs">Документы</a></li><li><a href="#contacts">Контакты</a></li></ul></div>
-    <div><h4>Контакты</h4><a class="ph-tel" href="tel:+79656580808">+7 965 658-08-08</a><p>Пн–Пт с 9:00 до 18:00</p><p>Уфа и ближайшие районы</p><br><a class="btn" href="#cta" data-order>Оставить заявку</a></div>
+    <div><h4>Контакты</h4><a class="ph-tel" href="tel:+79656580808">+7 965 658-08-08</a><p>Пн–Пт с 9:00 до 18:00</p><p>Уфа и ближайшие районы</p><br><a class="btn go" href="#cta" data-order>Оставить заявку <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </div>
   <div class="copy"><span>© 2024 Башпрокат.рф</span><span>Пользовательское соглашение · Политика обработки данных</span></div>
  </div>
