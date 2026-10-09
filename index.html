@@ -138,6 +138,13 @@ footer li a:hover{color:#fff}
   h2{font-size:clamp(36px,9vw,64px)}
   .list h3{font-size:32px}.cta h2{font-size:clamp(36px,10vw,64px)}
 }
+/* ===== Карточки: одинаковые фото и ровная сетка ===== */
+.card{display:flex;flex-direction:column;gap:12px}
+.card .ph.light{flex:none;height:340px;background:#fff;border:1px solid #ececE8;display:flex;align-items:center;justify-content:center}
+.card .ph.light>img{position:static;flex:1;width:100%;height:100%;min-height:0;max-height:none;object-fit:contain;padding:18px;background:#fff;mix-blend-mode:multiply}
+.card h3{margin-top:8px}
+.card .price{margin-top:auto;padding-top:8px}
+@media(max-width:600px){.card .ph.light{height:270px}}
 /* ===== Расположение ===== */
 .loc{padding:140px 0;background:#fff}
 .loc-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center}
