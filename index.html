@@ -31,7 +31,7 @@ h2{font-size:clamp(44px,6.5vw,88px)}
 .ph.light::after{color:#555;background:none}
 .ph::after{z-index:0}
 .ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
-.ph.light>img{position:static;inset:auto;flex:1;width:100%;height:auto;min-height:320px;max-height:460px;object-fit:contain;padding:28px;background:#EFEFEB}
+.ph.light>img{position:static;inset:auto;flex:1;width:100%;height:auto;min-height:260px;max-height:360px;object-fit:contain;padding:28px;background:#EFEFEB}
 
 /* header */
 header{position:absolute;inset:0 0 auto;z-index:5;color:#fff}
@@ -78,9 +78,9 @@ header .btn{padding:17px 26px;font-size:17px;white-space:nowrap;border-radius:12
 .arrows button:hover{background:var(--o);border-color:var(--o)}
 .track{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 4px 40px;margin:0 -4px}
 .track::-webkit-scrollbar{display:none}
-.card{flex:0 0 calc((100% - 28px)/2);scroll-snap-align:start;background:#fff;border-radius:22px;padding:20px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:8px 28px;box-shadow:0 8px 30px rgba(0,0,0,.06);align-items:start}
-.card .ph{grid-row:1/span 5;border-radius:var(--r);display:flex;align-items:stretch}
-.card>*:not(.ph){grid-column:2}
+.card{flex:0 0 calc((100% - 56px)/3);scroll-snap-align:start;background:#fff;border-radius:22px;padding:20px;display:grid;grid-template-columns:1fr;gap:12px;box-shadow:0 8px 30px rgba(0,0,0,.06);align-items:start}
+.card .ph{border-radius:var(--r);display:flex;align-items:stretch}
+.card>*:not(.ph){grid-column:1}
 .badge{position:absolute;top:14px;right:14px;z-index:2;background:var(--o);color:#111;font-weight:800;font-size:18px;padding:8px 16px;border-radius:99px}
 .card h3{font-size:60px;margin-top:12px}
 .card p{font-size:20px;color:var(--t2)}
@@ -243,7 +243,7 @@ footer li a:hover{color:#fff}
   <!-- Новая тележка: скопируйте любой <article class="card"> целиком внутрь .track -->
   <div class="track" id="track">
    <article class="card">
-    <div class="ph light" data-label="КГ 150П"><img src="images/kg150p.webp" alt="КГ 150П" onerror="this.remove()"><span class="badge">До 150 кг</span></div>
+    <div class="ph light" data-label="КГ 150П"><img src="images/kg150p.jpg" alt="КГ 150П" onerror="this.remove()"><span class="badge">До 150 кг</span></div>
     <h3>КГ 150П</h3>
     <p>Пневматические колёса и откидная лопата. Мягко едет по неровной земле и бордюрам.</p>
     <div class="use"><b>Подойдёт для</b><span>Холодильник</span><span>Стиральная машина</span><span>Коробки при переезде</span><span>Мешки и ящики</span></div>
@@ -251,7 +251,7 @@ footer li a:hover{color:#fff}
      <div class="btns"><a class="btn" href="#" data-details="kg150p">Подробнее</a><a class="btn out" href="#cta" data-order data-model="КГ 150П">Заявка</a></div>
     </article>
     <article class="card">
-     <div class="ph light" data-label="КГР 200"><img src="images/kgr200.webp" alt="КГР 200" onerror="this.remove()"><span class="badge">До 200 кг</span></div>
+     <div class="ph light" data-label="КГР 200"><img src="images/kgr200.jpg" alt="КГР 200" onerror="this.remove()"><span class="badge">До 200 кг</span></div>
      <h3>КГР 200</h3>
      <p>Широкая платформа и литые колёса, которые не пробиваются. Для тяжёлых грузов.</p>
      <div class="use"><b>Подойдёт для</b><span>Холодильник и плита</span><span>Мебель и шкафы</span><span>Товар для магазина</span><span>Стройматериалы</span></div>
@@ -267,7 +267,7 @@ footer li a:hover{color:#fff}
      <div class="btns"><a class="btn" href="#" data-details="kgl200">Подробнее</a><a class="btn out" href="#cta" data-order data-model="КГЛ 200">Заявка</a></div>
     </article>
     <article class="card">
-     <div class="ph light" data-label="ТПМ 70 · фото скоро"><span class="badge">До 50 кг</span></div>
+     <div class="ph light" data-label="ТПМ 70"><img src="images/tpm70.jpg" alt="ТПМ 70" onerror="this.remove()"><span class="badge">До 50 кг</span></div>
      <h3>ТПМ 70</h3>
      <p>Компактная платформенная тележка с 2 поворотными колёсами. Устойчивая и маневренная, пройдёт даже в узких местах.</p>
      <div class="use"><b>Подойдёт для</b><span>Приёмка товара</span><span>Раскладка по полкам</span><span>Коробки и ящики</span><span>Узкие проходы</span></div>
@@ -275,7 +275,7 @@ footer li a:hover{color:#fff}
      <div class="btns"><a class="btn" href="#" data-details="tpm70">Подробнее</a><a class="btn out" href="#cta" data-order data-model="ТПМ 70">Заявка</a></div>
     </article>
     <article class="card">
-     <div class="ph light" data-label="ТП 3 · фото скоро"><span class="badge">До 450 кг</span></div>
+     <div class="ph light" data-label="ТП 3"><img src="images/tp3.jpg" alt="ТП 3" onerror="this.remove()"><span class="badge">До 450 кг</span></div>
      <h3>ТП 3</h3>
      <p>Платформенная тележка 600×1000 для бережной перевозки грузов до 450 кг. Без бортов — везёт и неформатные грузы.</p>
      <div class="use"><b>Подойдёт для</b><span>Мебель и техника</span><span>Листовые материалы</span><span>Складские грузы</span><span>Переезд офиса</span></div>
@@ -283,7 +283,7 @@ footer li a:hover{color:#fff}
      <div class="btns"><a class="btn" href="#" data-details="tp3">Подробнее</a><a class="btn out" href="#cta" data-order data-model="ТП 3">Заявка</a></div>
     </article>
     <article class="card">
-     <div class="ph light" data-label="ТПЦ 5 · фото скоро"><span class="badge">До 450 кг</span></div>
+     <div class="ph light" data-label="ТПЦ 5"><img src="images/tpc5.jpg" alt="ТПЦ 5" onerror="this.remove()"><span class="badge">До 450 кг</span></div>
      <h3>ТПЦ 5</h3>
      <p>Большая платформенная тележка 700×1200 для грузов до 450 кг. Без бортов — для габаритных и неформатных грузов.</p>
      <div class="use"><b>Подойдёт для</b><span>Крупная техника</span><span>Стройматериалы</span><span>Товар для магазина</span><span>Склад и производство</span></div>
@@ -291,7 +291,7 @@ footer li a:hover{color:#fff}
      <div class="btns"><a class="btn" href="#" data-details="tpc5">Подробнее</a><a class="btn out" href="#cta" data-order data-model="ТПЦ 5">Заявка</a></div>
     </article>
     <article class="card">
-     <div class="ph light" data-label="ТГУ 300 · фото скоро"><span class="badge">До 300 кг</span></div>
+     <div class="ph light" data-label="ТГУ 300"><img src="images/tgu300.jpg" alt="ТГУ 300" onerror="this.remove()"><span class="badge">До 300 кг</span></div>
      <h3>ТГУ 300</h3>
      <p>Универсальная тележка на литых колёсах, везёт до 300 кг. Три положения: вертикально, под 45° и горизонтально.</p>
      <div class="use"><b>Подойдёт для</b><span>Тяжёлые коробки</span><span>Бытовая техника</span><span>Мешки и ящики</span><span>Склад и переезд</span></div>
@@ -438,11 +438,11 @@ document.getElementById('next').onclick=()=>t.scrollBy({left:step(),behavior:'sm
 
 /* ===== Данные для «Подробнее» (по каталогу производителя Rusklad) ===== */
 const DETAILS={
- kg150p:{name:"КГ 150П",img:"images/kg150p.webp",price:"350 ₽",per:"/ сутки",
+ kg150p:{name:"КГ 150П",img:"images/kg150p.jpg",price:"350 ₽",per:"/ сутки",
   desc:"Двухколёсная тележка с откидной полкой. Каркас из круглой трубы 25 мм, штампованная лопата из листа 3 мм с рёбрами жёсткости. Пневматические колёса Ø200 мягко идут по неровной земле, бордюрам и порогам. Порошковая окраска — можно работать на улице. Откидная полка увеличивает площадь, в сложенном виде тележка компактная.",
   spec:[["Грузоподъёмность","150 кг"],["Вес","6,1 кг"],["Высота","1295 мм"],["Платформа","227 × 290 мм"],["Откидная полка","502 × 235 мм"],["Колёса","пневматические Ø200"],["Покрытие","порошковое, RAL 5002"]],
   use:["Холодильник и стиралка при переезде","Коробки и мешки","Товар для магазина","Дача и стройка","Бордюры и пороги"]},
- kgr200:{name:"КГР 200",img:"images/kgr200.webp",price:"400 ₽",per:"/ сутки",
+ kgr200:{name:"КГР 200",img:"images/kgr200.jpg",price:"400 ₽",per:"/ сутки",
   desc:"Усиленная двухколёсная тележка для тяжёлых грузов. Прочная рама из круглой трубы и листа, широкая лопата 500 × 247 мм. Литые колёса Ø200 невозможно пробить — надёжны на складе и стройке. Порошковая окраска RAL 5002.",
   spec:[["Грузоподъёмность","200 кг"],["Вес","9 кг"],["Высота","1230 мм"],["Лопата","500 × 247 мм"],["Колёса","литые Ø200"],["Покрытие","порошковое, RAL 5002"]],
   use:["Холодильник и плита","Мебель и шкафы","Товар для магазина","Мешки цемента и плитка","Складские коробки"]},
@@ -450,19 +450,19 @@ const DETAILS={
   desc:"Лестничная тележка: два блока по три колеса Ø160 сами «шагают» по ступеням — поднимать груз вручную не нужно. Меньше рывков и ударов, хрупкие грузы едут спокойнее. Платформа с рёбрами жёсткости, рама из трубы 25 мм. Блоки также легко берут бордюры и пороги.",
   spec:[["Грузоподъёмность","200 кг"],["Вес","8,8 кг (без колёс)"],["Габариты","605 × 576 × 1360 мм"],["Платформа","395 × 250 мм"],["Колёса","2 блока по 3 шт, Ø160"],["Покрытие","порошковое, RAL 5002"]],
   use:["Подъём техники без лифта","Переезд на этаж","Бутыли с водой","Коробки по лестнице","Бордюры и пороги"]},
- tpm70:{name:"ТПМ 70",img:"",price:"300 ₽",per:"/ сутки",
+ tpm70:{name:"ТПМ 70",img:"images/tpm70.jpg",price:"300 ₽",per:"/ сутки",
   desc:"Грузовая платформенная тележка с двумя поворотными колёсами, нагрузка до 50 кг. Конструкция устойчивая и маневренная даже под нагрузкой, а компактные габариты позволяют пройти в узких местах. Хороша для приёмки и раскладки груза.",
   spec:[["Грузоподъёмность","50 кг"],["Платформа","470 × 720 мм"],["Колёса","2 поворотных"],["Тип","платформенная"]],
   use:["Приёмка товара","Раскладка по полкам","Коробки и ящики","Узкие проходы склада","Небольшие грузы"]},
- tp3:{name:"ТП 3",img:"",price:"550 ₽",per:"/ сутки",
+ tp3:{name:"ТП 3",img:"images/tp3.jpg",price:"550 ₽",per:"/ сутки",
   desc:"Платформенная тележка для бережной транспортировки грузов до 450 кг. Отсутствие бортиков позволяет везти неформатные и габаритные грузы, которые не встали бы на обычную тележку.",
   spec:[["Грузоподъёмность","450 кг"],["Платформа","600 × 1000 мм"],["Борта","отсутствуют"],["Тип","платформенная"]],
   use:["Мебель и техника в упаковке","Листовые материалы","Неформатные грузы","Переезд офиса","Складские грузы"]},
- tpc5:{name:"ТПЦ 5",img:"",price:"550 ₽",per:"/ сутки",
+ tpc5:{name:"ТПЦ 5",img:"images/tpc5.jpg",price:"550 ₽",per:"/ сутки",
   desc:"Большая платформенная тележка для бережной транспортировки грузов до 450 кг. Просторная платформа 700 × 1200 и отсутствие бортов — для самых габаритных грузов.",
   spec:[["Грузоподъёмность","450 кг"],["Платформа","700 × 1200 мм"],["Борта","отсутствуют"],["Тип","платформенная"]],
   use:["Крупная техника","Стройматериалы","Товар для магазина","Габаритные грузы","Склад и производство"]},
- tgu300:{name:"ТГУ 300",img:"",price:"400 ₽",per:"/ сутки",
+ tgu300:{name:"ТГУ 300",img:"images/tgu300.jpg",price:"400 ₽",per:"/ сутки",
   desc:"Грузовая универсальная тележка на литых колёсах, перевозит до 300 кг. Принимает три фиксированных положения: вертикальное, наклон под 45 градусов и горизонтальное — подстраивается под груз.",
   spec:[["Грузоподъёмность","300 кг"],["Колёса","литые"],["Положения","вертикально / 45° / горизонтально"],["Тип","универсальная"]],
   use:["Тяжёлые коробки","Бытовая техника","Мешки и ящики","Складские работы","Домашний переезд"]}
